@@ -2,6 +2,8 @@
 
 Each article has one dedicated folder listed in samples.json. Keep its case study independent from the other articles. Use a small C# console app or TypeScript Node app unless the lesson needs a real HTTP endpoint or worker.
 
+All C# samples use Microsoft SQL Server LocalDB with Windows integrated authentication. Document its installation, provider selection, connection string, and database setup. Verify C# examples on Windows against LocalDB. TypeScript samples use PostgreSQL.
+
 ## Public naming
 
 Use descriptive topic names for folders, projects, and article links. Add the language or framework when needed to distinguish implementations, such as `monthly-usage-quotas-csharp` and `billing-period-usage-metering-typescript`. Keep editorial tracking codes, scenario numbers, and publication-channel labels in private planning documents. Do not copy them into sample metadata, source comments, command output, image names, blog URLs, or reader-facing prose.
@@ -30,6 +32,8 @@ Use descriptive topic names for folders, projects, and article links. Add the la
 Prefer dotnet run for C# and npm ci followed by npm run demo for TypeScript. If an example requires a server, document both startup and the commands that exercise it. Avoid interface scaffolding unrelated to the lesson.
 
 ## Before marking a sample ready
+
+Apply the humanizer skill when drafting and reviewing the article and sample README. Keep the prose direct and specific, preserve factual qualifications, and leave tested code and API identifiers unchanged. Record the editorial review in the private article verification notes.
 
 Run it from a clean checkout with a disposable database, verify its normal and failure cases, and record the tested dependency versions and commit. Add appropriate CI checks for the runnable sample. Update samples.json with status ready, its published article URL when available, and the verified commit. Do not mark a placeholder or compile-only example ready.
 

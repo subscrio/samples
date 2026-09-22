@@ -1,0 +1,42 @@
+name: Verify ASP.NET Core feature entitlements
+
+on:
+  push:
+    paths:
+      - 'examples/feature-entitlements-aspnet-core/**'
+      - '.github/workflows/feature-entitlements.yml'
+  pull_request:
+    paths:
+      - 'examples/feature-entitlements-aspnet-core/**'
+      - '.github/workflows/feature-entitlements.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  localdb:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: examples/feature-entitlements-aspnet-core
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Start SQL Server LocalDB
+        run: |
+          $instances = sqllocaldb info
+          if ($LASTEXITCODE -ne 0) { throw 'SQL Server LocalDB is unavailable.' }
+          if ($instances -notcontains 'MSSQLLocalDB') {
+            sqllocaldb create MSSQLLocalDB
+            if ($LASTEXITCODE -ne 0) { throw 'Could not create the LocalDB instance.' }
+          }
+          sqllocaldb start MSSQLLocalDB
+          if ($LASTEXITCODE -ne 0) { throw 'Could not start LocalDB.' }
+      - name: Restore locked dependencies
+        run: dotnet restore --locked-mode --source https://api.nuget.org/v3/index.json
+      - name: Verify HTTP and database behavior
+        run: dotnet run --no-restore -- --verify

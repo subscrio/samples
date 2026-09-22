@@ -8,6 +8,8 @@ This repository is being prepared. The [sample index](samples.json) lists 33 pla
 
 Each article gets its own folder under `examples/`, named for the implementation it teaches and the language or framework it uses. Most examples will be small .NET console or TypeScript Node applications. Samples that demonstrate an HTTP boundary include a minimal server; the Stripe renewal example includes the webhook endpoints it needs.
 
+C# examples use Microsoft SQL Server LocalDB on Windows. TypeScript examples use PostgreSQL. Each sample documents its own prerequisites and connection setup.
+
 ```text
 examples/
   feature-entitlements-aspnet-core/
