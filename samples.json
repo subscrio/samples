@@ -7,9 +7,9 @@
         "csharp"
       ],
       "path": "examples/feature-entitlements-aspnet-core",
-      "status": "planned",
+      "status": "ready",
       "articleUrl": null,
-      "verifiedCommit": null
+      "verifiedCommit": "379e1df1ce7d780ba0077f2ecbfd51774f0504fb"
     },
     {
       "title": "How to add feature entitlements to a TypeScript app with Subscrio",

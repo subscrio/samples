@@ -2,7 +2,7 @@
 
 Runnable C# and TypeScript examples for Subscrio how-to articles.
 
-This repository is being prepared. The [sample index](samples.json) lists 33 planned article examples; no runnable samples have been published yet. Entries become available only after their code and documented setup have been verified.
+Start with the [ASP.NET Core feature-entitlement example](examples/feature-entitlements-aspnet-core). It includes SQL Server LocalDB setup and an executable check of the real HTTP endpoint. The [sample index](samples.json) tracks ready examples and the remaining planned articles.
 
 ## Repository layout
 

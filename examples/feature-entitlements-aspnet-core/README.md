@@ -19,6 +19,8 @@ Companion article: "How to add feature entitlements to an ASP.NET Core app with 
 
 The sample pins `Subscrio.Core` to 0.4.0 and includes `packages.lock.json`. It uses Windows integrated authentication, so no database password is needed. The connection-string format is shown in `appsettings.example.json`; the executable builds it in `LocalDatabase.cs` and does not read that reference file.
 
+Verified on Windows with .NET SDK 10.0.302 and SQL Server 2019 LocalDB 15.0.4382.1.
+
 ```powershell
 sqllocaldb info
 sqllocaldb start MSSQLLocalDB
