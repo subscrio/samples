@@ -6,14 +6,14 @@ This repository is being prepared. The [sample index](samples.json) lists 33 pla
 
 ## Repository layout
 
-Each article gets its own folder under `examples/`. Most examples will be small .NET console or TypeScript Node applications. Samples that demonstrate an HTTP boundary include a minimal server; the Stripe renewal example includes the webhook endpoints it needs.
+Each article gets its own folder under `examples/`, named for the implementation it teaches and the language or framework it uses. Most examples will be small .NET console or TypeScript Node applications. Samples that demonstrate an HTTP boundary include a minimal server; the Stripe renewal example includes the webhook endpoints it needs.
 
 ```text
 examples/
-  01-wc-feature-entitlements/   # C# console application
-  01-wt-feature-entitlements/   # TypeScript Node application
+  feature-entitlements-aspnet-core/
+  feature-entitlements-typescript/
   ...
-  x01-stripe-renewals/
+  stripe-subscription-renewals/
     dotnet/
     typescript/
 ```

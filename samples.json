@@ -2,431 +2,332 @@
   "schemaVersion": 1,
   "samples": [
     {
-      "id": "01-WC",
       "title": "How to add feature entitlements to an ASP.NET Core app with Subscrio",
-      "scenario": "01",
       "languages": [
         "csharp"
       ],
-      "destination": "website",
-      "path": "examples/01-wc-feature-entitlements",
+      "path": "examples/feature-entitlements-aspnet-core",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "01-WT",
       "title": "How to add feature entitlements to a TypeScript app with Subscrio",
-      "scenario": "01",
       "languages": [
         "typescript"
       ],
-      "destination": "website",
-      "path": "examples/01-wt-feature-entitlements",
+      "path": "examples/feature-entitlements-typescript",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "01-OC",
       "title": "Replace hardcoded plan checks with feature entitlements in C#",
-      "scenario": "01",
       "languages": [
         "csharp"
       ],
-      "destination": "offsite",
-      "path": "examples/01-oc-replace-plan-checks",
+      "path": "examples/replace-hardcoded-plan-checks-csharp",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "01-OT",
       "title": "Enforce paid feature access on the server in TypeScript",
-      "scenario": "01",
       "languages": [
         "typescript"
       ],
-      "destination": "offsite",
-      "path": "examples/01-ot-server-feature-gates",
+      "path": "examples/server-side-feature-gating-typescript",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "02-WC",
       "title": "How to build a trial-to-free subscription workflow with Subscrio in C#",
-      "scenario": "02",
       "languages": [
         "csharp"
       ],
-      "destination": "website",
-      "path": "examples/02-wc-trial-to-free",
+      "path": "examples/trial-to-free-subscriptions-csharp",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "02-WT",
       "title": "How to schedule subscription activation with Subscrio in TypeScript",
-      "scenario": "02",
       "languages": [
         "typescript"
       ],
-      "destination": "website",
-      "path": "examples/02-wt-scheduled-activation",
+      "path": "examples/scheduled-subscription-activation-typescript",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "02-OC",
       "title": "Test subscription access at expiration boundaries in C#",
-      "scenario": "02",
       "languages": [
         "csharp"
       ],
-      "destination": "offsite",
-      "path": "examples/02-oc-expiry-boundaries",
+      "path": "examples/subscription-expiration-tests-csharp",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "02-OT",
       "title": "Handle subscription cancellation without ambiguous access rules in TypeScript",
-      "scenario": "02",
       "languages": [
         "typescript"
       ],
-      "destination": "offsite",
-      "path": "examples/02-ot-cancellation-policy",
+      "path": "examples/subscription-cancellation-access-typescript",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "03-WC",
       "title": "How to add subscription capacity packs with Subscrio in C#",
-      "scenario": "03",
       "languages": [
         "csharp"
       ],
-      "destination": "website",
-      "path": "examples/03-wc-capacity-packs",
+      "path": "examples/subscription-capacity-packs-csharp",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "03-WT",
       "title": "How to sell optional feature bundles with Subscrio in TypeScript",
-      "scenario": "03",
       "languages": [
         "typescript"
       ],
-      "destination": "website",
-      "path": "examples/03-wt-feature-bundles",
+      "path": "examples/subscription-feature-bundles-typescript",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "03-OC",
       "title": "Retire a subscription add-on while preserving existing access in C#",
-      "scenario": "03",
       "languages": [
         "csharp"
       ],
-      "destination": "offsite",
-      "path": "examples/03-oc-retire-addons",
+      "path": "examples/retire-subscription-addons-csharp",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "03-OT",
       "title": "Resolve competing subscription add-ons in TypeScript",
-      "scenario": "03",
       "languages": [
         "typescript"
       ],
-      "destination": "offsite",
-      "path": "examples/03-ot-replacement-addons",
+      "path": "examples/subscription-addon-precedence-typescript",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "04-WC",
       "title": "How to enforce monthly usage quotas with Subscrio in C#",
-      "scenario": "04",
       "languages": [
         "csharp"
       ],
-      "destination": "website",
-      "path": "examples/04-wc-monthly-quotas",
+      "path": "examples/monthly-usage-quotas-csharp",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "04-WT",
       "title": "How to meter usage by subscription billing period with Subscrio in TypeScript",
-      "scenario": "04",
       "languages": [
         "typescript"
       ],
-      "destination": "website",
-      "path": "examples/04-wt-billing-period-meter",
+      "path": "examples/billing-period-usage-metering-typescript",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "04-OC",
       "title": "Track subscription usage overages without blocking work in C#",
-      "scenario": "04",
       "languages": [
         "csharp"
       ],
-      "destination": "offsite",
-      "path": "examples/04-oc-soft-overages",
+      "path": "examples/soft-usage-overages-csharp",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "04-OT",
       "title": "Prevent concurrent requests from exceeding a usage quota in TypeScript",
-      "scenario": "04",
       "languages": [
         "typescript"
       ],
-      "destination": "offsite",
-      "path": "examples/04-ot-concurrent-quota",
+      "path": "examples/concurrent-usage-quotas-typescript",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "05-WC",
       "title": "How to grant monthly subscription credits with Subscrio in C#",
-      "scenario": "05",
       "languages": [
         "csharp"
       ],
-      "destination": "website",
-      "path": "examples/05-wc-monthly-credits",
+      "path": "examples/monthly-subscription-credits-csharp",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "05-WT",
       "title": "How to share a credit wallet across products with Subscrio in TypeScript",
-      "scenario": "05",
       "languages": [
         "typescript"
       ],
-      "destination": "website",
-      "path": "examples/05-wt-shared-wallet",
+      "path": "examples/shared-credit-wallet-typescript",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "05-OC",
       "title": "Handle month-end subscription credit grants correctly in C#",
-      "scenario": "05",
       "languages": [
         "csharp"
       ],
-      "destination": "offsite",
-      "path": "examples/05-oc-month-end-grants",
+      "path": "examples/month-end-credit-grants-csharp",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "05-OT",
       "title": "Preserve prepaid credits when a subscription ends in TypeScript",
-      "scenario": "05",
       "languages": [
         "typescript"
       ],
-      "destination": "offsite",
-      "path": "examples/05-ot-cancellation-credits",
+      "path": "examples/subscription-cancellation-credits-typescript",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "06-WC",
       "title": "How to grant feature overrides that expire automatically with Subscrio in C#",
-      "scenario": "06",
       "languages": [
         "csharp"
       ],
-      "destination": "website",
-      "path": "examples/06-wc-timed-overrides",
+      "path": "examples/timed-feature-overrides-csharp",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "06-WT",
       "title": "How to combine entitlements from multiple subscriptions with Subscrio in TypeScript",
-      "scenario": "06",
       "languages": [
         "typescript"
       ],
-      "destination": "website",
-      "path": "examples/06-wt-subscription-composition",
+      "path": "examples/combine-subscription-entitlements-typescript",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "06-OC",
       "title": "Explain which plan, add-on, or override controls a feature in C#",
-      "scenario": "06",
       "languages": [
         "csharp"
       ],
-      "destination": "offsite",
-      "path": "examples/06-oc-explain-entitlements",
+      "path": "examples/explain-feature-entitlements-csharp",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "06-OT",
       "title": "Expire a temporary quota increase without resetting usage in TypeScript",
-      "scenario": "06",
       "languages": [
         "typescript"
       ],
-      "destination": "offsite",
-      "path": "examples/06-ot-quota-override-expiry",
+      "path": "examples/quota-override-expiration-typescript",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "07-WC",
       "title": "How to sell your entire ASP.NET Core app for a one-time payment with Subscrio",
-      "scenario": "07",
       "languages": [
         "csharp"
       ],
-      "destination": "website",
-      "path": "examples/07-wc-one-time-app-purchase",
+      "path": "examples/one-time-app-purchase-aspnet-core",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "07-WT",
       "title": "How to sell your entire TypeScript app for a one-time payment with Subscrio",
-      "scenario": "07",
       "languages": [
         "typescript"
       ],
-      "destination": "website",
-      "path": "examples/07-wt-one-time-app-purchase",
+      "path": "examples/one-time-app-purchase-typescript",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "07-OC",
       "title": "Model a one-time app purchase without recurring billing in C#",
-      "scenario": "07",
       "languages": [
         "csharp"
       ],
-      "destination": "offsite",
-      "path": "examples/07-oc-non-recurring-agreement",
+      "path": "examples/non-recurring-app-agreements-csharp",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "07-OT",
       "title": "Restore app access after interrupted one-time purchase fulfillment in TypeScript",
-      "scenario": "07",
       "languages": [
         "typescript"
       ],
-      "destination": "offsite",
-      "path": "examples/07-ot-purchase-recovery",
+      "path": "examples/one-time-app-purchase-recovery-typescript",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "08-WC",
       "title": "How to sell prepaid credit packs with Subscrio in C#",
-      "scenario": "08",
       "languages": [
         "csharp"
       ],
-      "destination": "website",
-      "path": "examples/08-wc-prepaid-packs",
+      "path": "examples/prepaid-credit-packs-csharp",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "08-WT",
       "title": "How to charge prepaid credits for background jobs with Subscrio in TypeScript",
-      "scenario": "08",
       "languages": [
         "typescript"
       ],
-      "destination": "website",
-      "path": "examples/08-wt-prepaid-jobs",
+      "path": "examples/prepaid-background-jobs-typescript",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "08-OC",
       "title": "Spend promotional credits before purchased credits in C#",
-      "scenario": "08",
       "languages": [
         "csharp"
       ],
-      "destination": "offsite",
-      "path": "examples/08-oc-credit-allocation",
+      "path": "examples/promotional-credit-allocation-csharp",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "08-OT",
       "title": "Prevent duplicate prepaid top-ups from payment retries in TypeScript",
-      "scenario": "08",
       "languages": [
         "typescript"
       ],
-      "destination": "offsite",
-      "path": "examples/08-ot-topup-retries",
+      "path": "examples/payment-topup-retries-typescript",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null
     },
     {
-      "id": "X01",
       "title": "How to handle automated subscription renewals with Stripe and Subscrio",
-      "scenario": "02",
       "languages": [
         "csharp",
         "typescript"
       ],
-      "destination": "website",
-      "path": "examples/x01-stripe-renewals",
+      "path": "examples/stripe-subscription-renewals",
       "status": "planned",
       "articleUrl": null,
       "verifiedCommit": null

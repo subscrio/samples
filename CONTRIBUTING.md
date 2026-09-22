@@ -2,10 +2,14 @@
 
 Each article has one dedicated folder listed in samples.json. Keep its case study independent from the other articles. Use a small C# console app or TypeScript Node app unless the lesson needs a real HTTP endpoint or worker.
 
+## Public naming
+
+Use descriptive topic names for folders, projects, and article links. Add the language or framework when needed to distinguish implementations, such as `monthly-usage-quotas-csharp` and `billing-period-usage-metering-typescript`. Keep editorial tracking codes, scenario numbers, and publication-channel labels in private planning documents. Do not copy them into sample metadata, source comments, command output, image names, blog URLs, or reader-facing prose.
+
 ## Required files and behavior
 
 - Complete source, dependency declarations, and lock files where supported.
-- A README naming the article ID, commercial model, prerequisites, tested versions, setup commands, run command, expected output, and failure-case verification.
+- A README naming the article title and link, commercial model, prerequisites, tested versions, setup commands, run command, expected output, and failure-case verification.
 - An environment configuration example containing placeholders only. Never commit credentials, database exports, customer records, or Stripe live-mode data.
 - A reproducible catalog and customer setup with isolated sample keys, documented rerun behavior, and a disposable database requirement.
 - A demonstrated success path and the article's assigned failure path. Assertions must fail the process when expected behavior is violated.
