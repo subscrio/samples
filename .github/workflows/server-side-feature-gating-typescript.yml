@@ -1,0 +1,43 @@
+name: Verify server-side publication gating
+on:
+  push:
+    paths:
+      - 'examples/server-side-feature-gating-typescript/**'
+      - '.github/workflows/server-side-feature-gating-typescript.yml'
+  pull_request:
+    paths:
+      - 'examples/server-side-feature-gating-typescript/**'
+      - '.github/workflows/server-side-feature-gating-typescript.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  postgres:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_USER: bracketcamp
+          POSTGRES_PASSWORD: local-ci-only
+          POSTGRES_DB: bracketcamp_demo
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready --health-interval 5s
+          --health-timeout 5s --health-retries 10
+    defaults:
+      run:
+        working-directory: examples/server-side-feature-gating-typescript
+    env:
+      DATABASE_URL: postgresql://bracketcamp:local-ci-only@localhost:5432/bracketcamp_demo
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: examples/server-side-feature-gating-typescript/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - name: Verify repeat runs
+        run: npm run demo

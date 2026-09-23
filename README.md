@@ -42,3 +42,9 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for sample requirements.
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+## More runnable examples
+
+- [Replace hardcoded plan checks in C#](examples/replace-hardcoded-plan-checks-csharp). A new plan name keeps its purchased CSV export access.
+- [Enforce feature access in TypeScript](examples/server-side-feature-gating-typescript). Direct HTTP requests receive the correct publication decision.
+- [Transition a C# trial to read-only access](examples/trial-to-free-subscriptions-csharp). An explicit lifecycle job replaces an expired trial.
