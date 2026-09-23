@@ -81,3 +81,51 @@ Each runner creates a disposable database, starts a loopback server on an epheme
 The worker verifies raw-body signatures, checks durable receipts, retrieves current billing state, forwards matching paid invoices, and reconciles the current subscription. Payment eligibility and the receipt commit together after processing. Failures remain retriable; worker restart preserves receipt checks within the same database.
 
 Multiple worker processes need a distributed per-subscription lock covering retrieval through receipt commit. External effects are not covered. MooringDesk denies new work while the latest invoice is unpaid; core does not handle invoice.payment_failed or implement a grace period. Live retrieval adapters are included; default tests inject recorded sandbox responses.
+
+## Interactive Stripe CLI test
+
+Create a monthly recurring sandbox price in Stripe. Install the TypeScript dependencies with `npm --prefix typescript ci` from this folder; the shared sandbox helper uses the Stripe SDK installed there. Keep the CLI login and secret API key in the same sandbox.
+
+In a PowerShell terminal in this folder:
+
+```powershell
+$env:STRIPE_SECRET_KEY = "sk_test_replace_me"
+$env:STRIPE_PRICE_ID = "price_replace_me"
+node sandbox.cjs setup
+$env:STRIPE_SUBSCRIPTION_ID = "sub_printed_by_setup"
+```
+
+Setup creates a test-clock customer and paid subscription at your price. It saves IDs, not secrets, in ignored .sandbox-session.json. Use a separate terminal for the CLI:
+
+```shell
+stripe login
+stripe listen --latest --forward-to http://127.0.0.1:4242/stripe/webhook --events invoice.payment_succeeded,invoice.payment_failed,customer.subscription.updated,customer.subscription.deleted
+```
+
+Copy the listener's whsec value into the first terminal:
+
+```powershell
+$env:STRIPE_WEBHOOK_SECRET = "whsec_printed_by_listener"
+npm --prefix typescript run listen
+```
+
+The TypeScript server also needs DATABASE_URL, either in its .env file or environment. The pending C# project uses the same four Stripe environment variables; start LocalDB, then run `dotnet run -- --listen` from that project. Only run one server on port 4242 at a time. Both create fresh local databases, import your existing sandbox subscription, and retain data until stopped.
+
+Use a third terminal in this folder, with STRIPE_SECRET_KEY set, for each test. Wait for forwarded HTTP 200 responses and inspect status after each step:
+
+```powershell
+Invoke-RestMethod http://127.0.0.1:4242/status | ConvertTo-Json
+node sandbox.cjs renew
+Invoke-RestMethod http://127.0.0.1:4242/status | ConvertTo-Json
+node sandbox.cjs fail
+Invoke-RestMethod http://127.0.0.1:4242/status | ConvertTo-Json
+node sandbox.cjs recover
+Invoke-RestMethod http://127.0.0.1:4242/status | ConvertTo-Json
+node sandbox.cjs cancel
+Invoke-RestMethod http://127.0.0.1:4242/status | ConvertTo-Json
+```
+
+Expected access: true initially, true after renewal, false after failure, true after recovery, false after immediate cancellation. The local period must match the helper's Stripe period, and subscriptionCount must remain 1. Generic stripe trigger fixtures do not use this subscription's IDs. The demo ignores unrelated subscriptions, rejects invalid signatures with 400, and returns 500 on processing failure.
+
+Type `stop` and Enter in the server terminal to drop its disposable database. Stop the listener with Ctrl+C, then run `node sandbox.cjs cleanup` in the third terminal. This removes only the tutorial test clock, customer, and subscription. Your catalog product and price remain. Run setup again for a new session.
+
