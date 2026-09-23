@@ -2,7 +2,7 @@ using Microsoft.Data.SqlClient;
 public sealed class LocalDatabase : IAsyncDisposable {
     public string Name { get; } = "SubscrioBlog_" + Guid.NewGuid().ToString("N");
     public string ConnectionString => Build(Name);
-    private static string Build(string name) => new SqlConnectionStringBuilder { DataSource = @"(localdb)\MSSQLLocalDB", InitialCatalog = name, IntegratedSecurity = true, TrustServerCertificate = true }.ConnectionString;
+    private static string Build(string name) => new SqlConnectionStringBuilder { DataSource = Environment.GetEnvironmentVariable("SUBSCRIO_SAMPLE_SQLSERVER") ?? @"(localdb)\MSSQLLocalDB", InitialCatalog = name, IntegratedSecurity = true, TrustServerCertificate = true }.ConnectionString;
     public async Task CreateAsync() {
         await using var c = new SqlConnection(Build("master")); await c.OpenAsync();
         await using var cmd = c.CreateCommand(); cmd.CommandText = $"CREATE DATABASE [{Name}]"; await cmd.ExecuteNonQueryAsync();

@@ -12,7 +12,7 @@ Windows, .NET SDK 10.0.302, and SQL Server Express LocalDB. Install LocalDB thro
 
 Connection template: `Server=(localdb)\MSSQLLocalDB;Database=SubscrioBlog_<generated identifier>;Integrated Security=true;TrustServerCertificate=true`. The database name is generated for each run.
 
-Subscrio dependency: 0.4.0, pinned in the project and lock file.
+Subscrio dependency: 0.5.1, pinned in the project and lock file.
 
 ## Run
 
@@ -43,3 +43,5 @@ Expiration first removes certificate-generation access. The processor then creat
 Every run creates a uniquely named disposable database. Cleanup checks the generated name and drops only that database after the client closes. Run the same command again to repeat the checks without catalog collisions. Assertions terminate the process on an incorrect result.
 
 The sample teaches entitlement state and the application decisions shown above. Creating a billing cycle or subscription does not collect payment. External work and payment-provider integration remain application responsibilities.
+
+To use an existing SQL Server instance instead of LocalDB, set `SUBSCRIO_SAMPLE_SQLSERVER` (for example, `localhost`). The sample uses Windows authentication and needs permission to create its sample database.

@@ -4,7 +4,7 @@ MooringDesk follows one agreement through renewal, failed payment, recovery, can
 
 ## Current status
 
-TypeScript passes with public Subscrio 0.5.0 and Stripe 22.5.0. The pending C# implementation exposes a UTC materialization bug in public Subscrio.Core 0.5.0: subscription DTO period dates shift by the machine timezone after SQL Server reads. The exact-date assertion intentionally detects it. A tested UTC mapping fix passes this runner against LocalDB, but the library release is pending. **C# is not ready for public execution.** Its implementation remains with the unpublished article draft until the dependency fix is released. Keep the exact-date assertion; do not substitute the shifted date.
+TypeScript passes with public Subscrio 0.5.0 and Stripe 22.5.0. Subscrio.Core 0.5.1 fixes the SQL Server UTC mapping bug that blocked the C# runner. Its source remains with the unpublished article draft and still needs to be integrated and verified against the public package. No runnable C# project is published here yet. Keep the exact-date assertion when adding it.
 
 ## TypeScript
 

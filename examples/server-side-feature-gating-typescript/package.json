@@ -11,7 +11,7 @@
     "test": "npm run check && npm run demo"
   },
   "dependencies": {
-    "subscrio": "0.4.0",
+    "subscrio": "0.5.0",
     "dotenv": "17.4.2",
     "pg": "8.16.3"
   },

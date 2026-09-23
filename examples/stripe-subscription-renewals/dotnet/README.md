@@ -1,3 +1,3 @@
 # C# implementation pending
 
-The LocalDB renewal example is verified against a pending UTC mapping fix. Its source remains with the unpublished article draft until that fix ships in a public Subscrio.Core package. No runnable project is published here yet. The TypeScript example in the sibling folder is runnable with public dependencies.
+Subscrio.Core 0.5.1 includes the SQL Server UTC mapping fix. The C# renewal example remains with the unpublished article draft and still needs to be integrated and verified against that public package. No runnable project is published here yet. The TypeScript example in the sibling folder is runnable with public dependencies.

@@ -53,4 +53,4 @@ MIT. See [LICENSE](LICENSE).
 
 The ready entries in [samples.json](samples.json) now include monthly quotas, billing-period metering, monthly credit grants, shared wallets, timed overrides, subscription composition, whole-app one-time purchases, and prepaid jobs. Each points to its dedicated runnable folder.
 
-The [Stripe renewal examples](examples/stripe-subscription-renewals) include a passing TypeScript runner and sandbox lifecycle fixtures. The C# runner is explicitly blocked on a pending SQL Server UTC mapping release; its README records the failing assertion and tested fix.
+The [Stripe renewal examples](examples/stripe-subscription-renewals) include a passing TypeScript runner and sandbox lifecycle fixtures. The C# runner remains unpublished. The SQL Server UTC mapping fix is available in Subscrio.Core 0.5.1; the runner still needs to be integrated and verified against that public package.
