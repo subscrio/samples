@@ -19,7 +19,7 @@
       "path": "examples/feature-entitlements-typescript",
       "status": "ready",
       "articleUrl": null,
-      "verifiedCommit": "b011fb04a9a5740dbb0ee90f5c207f590c3eea82"
+      "verifiedCommit": "3d3eb370fae453f78443c1fd4c51076a1c700ea8"
     },
     {
       "title": "Replace hardcoded plan checks with feature entitlements in C#",
@@ -334,3 +334,4 @@
     }
   ]
 }
+
