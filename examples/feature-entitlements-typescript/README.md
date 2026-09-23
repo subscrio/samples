@@ -46,7 +46,7 @@ Collective scheduling: {"status":"queued","episodeKey":"harbor-stories-12","publ
 Free second show: {"error":"show_limit_reached","limit":1,"used":1}
 neighborhood-radio editorial: {"status":"queued","queue":"standard","subject":"Review our trailer"}
 harbor-network editorial: {"status":"queued","queue":"priority","subject":"Review our trailer"}
-PASS: toggle, numeric and text results; show boundaries; no-subscription defaults; user permissions.
+PASS: toggle, numeric and text results; show boundaries; no-subscription defaults.
 ```
 
 The timestamp is a fixed demonstration input. Queued entries live in memory; no episode is actually published and no support request is sent.
@@ -59,8 +59,8 @@ npm run demo
 ```
 
 - `catalog.ts` defines the product, features, plans, cycles, customers, and subscriptions. Running it again reuses existing records and restores the example plan values.
-- `actions.ts` contains the scheduling, show-creation, and support-routing methods. Each checks the actor's permission before reading the customer's entitlement.
-- `demo.ts` verifies exact return values and types, the first and excess show under each plan, no-subscription denials, permission denials, and the resulting in-memory records.
+- `actions.ts` contains the scheduling, show-creation, and support-routing methods. Each reads the customer's entitlement before accepting work.
+- `demo.ts` verifies exact return values and types, the first and excess show under each plan, no-subscription denials, and the resulting in-memory records.
 
 The numeric fallback `0` makes the numeric getter return a number. The text getter returns the route string; the application explicitly recognizes `standard` and `priority`. It denies an unknown route instead of treating arbitrary text as a valid queue.
 
@@ -68,6 +68,7 @@ The numeric fallback `0` makes the numeric getter return a number. The text gett
 
 Subscrio records persist in PostgreSQL. Show counts and queues reset with the process, so repeated runs produce the same output. The example does not migrate an older schema automatically; start with an empty sample database or follow Subscrio's migration documentation.
 
-`Actor` is a trusted development fixture, not a client-supplied identity. In an application, supply it from your authenticated customer context. The arrays demonstrate server-side decisions in one process; they are not persistent queues, a scheduling worker, or a production show store. Billing cycles describe agreements and do not collect payments.
+The arrays demonstrate server-side decisions in one process; they are not persistent queues, a scheduling worker, or a production show store. Billing cycles describe agreements and do not collect payments.
 
 The verification workflow runs on Node.js 22 with PostgreSQL 17. The sample uses the public `subscrio` package pinned in `package.json`; package changes require rerunning the checks.
+
