@@ -48,3 +48,9 @@ MIT. See [LICENSE](LICENSE).
 - [Replace hardcoded plan checks in C#](examples/replace-hardcoded-plan-checks-csharp). A new plan name keeps its purchased CSV export access.
 - [Enforce feature access in TypeScript](examples/server-side-feature-gating-typescript). Direct HTTP requests receive the correct publication decision.
 - [Transition a C# trial to read-only access](examples/trial-to-free-subscriptions-csharp). An explicit lifecycle job replaces an expired trial.
+
+## Quotas, credits, and purchases
+
+The ready entries in [samples.json](samples.json) now include monthly quotas, billing-period metering, monthly credit grants, shared wallets, timed overrides, subscription composition, whole-app one-time purchases, and prepaid jobs. Each points to its dedicated runnable folder.
+
+The [Stripe renewal examples](examples/stripe-subscription-renewals) include a passing TypeScript runner and sandbox lifecycle fixtures. The C# runner is explicitly blocked on a pending SQL Server UTC mapping release; its README records the failing assertion and tested fix.

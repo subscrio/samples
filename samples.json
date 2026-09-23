@@ -127,9 +127,9 @@
         "csharp"
       ],
       "path": "examples/monthly-usage-quotas-csharp",
-      "status": "planned",
+      "status": "ready",
       "articleUrl": null,
-      "verifiedCommit": null
+      "verifiedCommit": "b694ef1b7b1d117509bc109931cfcceda3673bc2"
     },
     {
       "title": "How to meter usage by subscription billing period with Subscrio in TypeScript",
@@ -137,9 +137,9 @@
         "typescript"
       ],
       "path": "examples/billing-period-usage-metering-typescript",
-      "status": "planned",
+      "status": "ready",
       "articleUrl": null,
-      "verifiedCommit": null
+      "verifiedCommit": "b694ef1b7b1d117509bc109931cfcceda3673bc2"
     },
     {
       "title": "Track subscription usage overages without blocking work in C#",
@@ -167,9 +167,9 @@
         "csharp"
       ],
       "path": "examples/monthly-subscription-credits-csharp",
-      "status": "planned",
+      "status": "ready",
       "articleUrl": null,
-      "verifiedCommit": null
+      "verifiedCommit": "b694ef1b7b1d117509bc109931cfcceda3673bc2"
     },
     {
       "title": "How to share a credit wallet across products with Subscrio in TypeScript",
@@ -177,9 +177,9 @@
         "typescript"
       ],
       "path": "examples/shared-credit-wallet-typescript",
-      "status": "planned",
+      "status": "ready",
       "articleUrl": null,
-      "verifiedCommit": null
+      "verifiedCommit": "b694ef1b7b1d117509bc109931cfcceda3673bc2"
     },
     {
       "title": "Handle month-end subscription credit grants correctly in C#",
@@ -207,9 +207,9 @@
         "csharp"
       ],
       "path": "examples/timed-feature-overrides-csharp",
-      "status": "planned",
+      "status": "ready",
       "articleUrl": null,
-      "verifiedCommit": null
+      "verifiedCommit": "b694ef1b7b1d117509bc109931cfcceda3673bc2"
     },
     {
       "title": "How to combine entitlements from multiple subscriptions with Subscrio in TypeScript",
@@ -217,9 +217,9 @@
         "typescript"
       ],
       "path": "examples/combine-subscription-entitlements-typescript",
-      "status": "planned",
+      "status": "ready",
       "articleUrl": null,
-      "verifiedCommit": null
+      "verifiedCommit": "b694ef1b7b1d117509bc109931cfcceda3673bc2"
     },
     {
       "title": "Explain which plan, add-on, or override controls a feature in C#",
@@ -247,9 +247,9 @@
         "csharp"
       ],
       "path": "examples/one-time-app-purchase-aspnet-core",
-      "status": "planned",
+      "status": "ready",
       "articleUrl": null,
-      "verifiedCommit": null
+      "verifiedCommit": "b694ef1b7b1d117509bc109931cfcceda3673bc2"
     },
     {
       "title": "How to sell your entire TypeScript app for a one-time payment with Subscrio",
@@ -257,9 +257,9 @@
         "typescript"
       ],
       "path": "examples/one-time-app-purchase-typescript",
-      "status": "planned",
+      "status": "ready",
       "articleUrl": null,
-      "verifiedCommit": null
+      "verifiedCommit": "b694ef1b7b1d117509bc109931cfcceda3673bc2"
     },
     {
       "title": "Model a one-time app purchase without recurring billing in C#",
@@ -287,9 +287,9 @@
         "csharp"
       ],
       "path": "examples/prepaid-credit-packs-csharp",
-      "status": "planned",
+      "status": "ready",
       "articleUrl": null,
-      "verifiedCommit": null
+      "verifiedCommit": "b694ef1b7b1d117509bc109931cfcceda3673bc2"
     },
     {
       "title": "How to charge prepaid credits for background jobs with Subscrio in TypeScript",
@@ -297,9 +297,9 @@
         "typescript"
       ],
       "path": "examples/prepaid-background-jobs-typescript",
-      "status": "planned",
+      "status": "ready",
       "articleUrl": null,
-      "verifiedCommit": null
+      "verifiedCommit": "b694ef1b7b1d117509bc109931cfcceda3673bc2"
     },
     {
       "title": "Spend promotional credits before purchased credits in C#",
@@ -328,9 +328,13 @@
         "typescript"
       ],
       "path": "examples/stripe-subscription-renewals",
-      "status": "planned",
+      "status": "blocked",
       "articleUrl": null,
-      "verifiedCommit": null
+      "verifiedCommit": null,
+      "verifiedLanguages": {
+        "typescript": "b694ef1b7b1d117509bc109931cfcceda3673bc2"
+      },
+      "blocker": "C# SQL Server UTC mapping fix is tested locally; public library release is pending."
     }
   ]
 }
