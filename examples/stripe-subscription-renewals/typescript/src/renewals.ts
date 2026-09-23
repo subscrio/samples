@@ -8,7 +8,8 @@ export class RenewalWorker {
   private tail: Promise<unknown> = Promise.resolve();
   constructor(private app: Subscrio, private db: Client,
     private retrieve: (id: string) => Promise<Stripe.Subscription>,
-    private secret: string, private subscriptionId: string) {}
+    private secret: string, private subscriptionId: string,
+    private priceId = 'price_mooring', private customerId = 'cus_mooring') {}
 
   async install() {
     await this.db.query(`CREATE TABLE renewal_receipts (event_id text PRIMARY KEY);
@@ -29,15 +30,15 @@ export class RenewalWorker {
     const reference = object.object === 'subscription' ? object.id
       : object.parent?.subscription_details?.subscription;
     const id = typeof reference === 'string' ? reference : reference?.id;
-    if (id !== this.subscriptionId) throw new Error('Unexpected subscription');
+    if (id !== this.subscriptionId) return 'ignored';
     if ((await this.db.query('SELECT 1 FROM renewal_receipts WHERE event_id=$1',[event.id])).rowCount) return 'duplicate';
 
     // Fetch current billing state rather than treating event delivery order as time order.
     const current = await this.retrieve(id);
     if (current.id !== id) throw new Error('Subscription retrieval mismatch');
-    const item = current.items.data.find(i=>i.price.id==='price_mooring');
+    const item = current.items.data.find(i=>i.price.id===this.priceId);
     if (!item) throw new Error('Unmapped Stripe price');
-    if (current.customer !== 'cus_mooring') throw new Error('Missing customer link');
+    if (current.customer !== this.customerId) throw new Error('Missing customer link');
     const invoice = current.latest_invoice;
     if (!invoice || typeof invoice === 'string') throw new Error('Expand latest_invoice when retrieving');
 

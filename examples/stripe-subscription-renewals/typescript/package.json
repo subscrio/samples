@@ -7,6 +7,7 @@
   },
   "scripts": {
     "check": "tsc --noEmit",
+    "listen": "tsx src/listen.ts",
     "demo": "tsx src/demo.ts",
     "test": "npm run check && npm run demo"
   },
