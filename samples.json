@@ -27,9 +27,9 @@
         "csharp"
       ],
       "path": "examples/replace-hardcoded-plan-checks-csharp",
-      "status": "planned",
+      "status": "ready",
       "articleUrl": null,
-      "verifiedCommit": null
+      "verifiedCommit": "cb9e842ca46ed65737d9de70d2ae4303f5858f64"
     },
     {
       "title": "Enforce paid feature access on the server in TypeScript",
@@ -37,9 +37,9 @@
         "typescript"
       ],
       "path": "examples/server-side-feature-gating-typescript",
-      "status": "planned",
+      "status": "ready",
       "articleUrl": null,
-      "verifiedCommit": null
+      "verifiedCommit": "cb9e842ca46ed65737d9de70d2ae4303f5858f64"
     },
     {
       "title": "How to build a trial-to-free subscription workflow with Subscrio in C#",
@@ -47,9 +47,9 @@
         "csharp"
       ],
       "path": "examples/trial-to-free-subscriptions-csharp",
-      "status": "planned",
+      "status": "ready",
       "articleUrl": null,
-      "verifiedCommit": null
+      "verifiedCommit": "cb9e842ca46ed65737d9de70d2ae4303f5858f64"
     },
     {
       "title": "How to schedule subscription activation with Subscrio in TypeScript",
@@ -334,4 +334,3 @@
     }
   ]
 }
-
