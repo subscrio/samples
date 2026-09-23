@@ -4,7 +4,7 @@ MooringDesk follows one agreement through renewal, failed payment, recovery, can
 
 ## Current status
 
-TypeScript passes with public Subscrio 0.5.0 and Stripe 22.5.0. The C# runner exposes a UTC materialization bug in public Subscrio.Core 0.5.0: subscription DTO period dates shift by the machine timezone after SQL Server reads. The exact-date assertion intentionally detects it. A tested UTC mapping fix passes this runner against LocalDB, but the library release is pending. **C# is not ready for public execution.** Keep the assertion; do not substitute the shifted date.
+TypeScript passes with public Subscrio 0.5.0 and Stripe 22.5.0. The pending C# implementation exposes a UTC materialization bug in public Subscrio.Core 0.5.0: subscription DTO period dates shift by the machine timezone after SQL Server reads. The exact-date assertion intentionally detects it. A tested UTC mapping fix passes this runner against LocalDB, but the library release is pending. **C# is not ready for public execution.** Its implementation remains with the unpublished article draft until the dependency fix is released. Keep the exact-date assertion; do not substitute the shifted date.
 
 ## TypeScript
 
@@ -21,13 +21,7 @@ npm test
 
 Tested: .NET SDK 10.0.302, Stripe.net 52.3.0, and SQL Server Express LocalDB on Windows with integrated authentication. Connection template: `Server=(localdb)\MSSQLLocalDB;Database=SubscrioBlog_<generated name>;Integrated Security=true;TrustServerCertificate=true`. Install LocalDB through SQL Server Express.
 
-From the dotnet folder, these commands currently reproduce the public package's exact-date failure on a non-UTC host. Rerun after the UTC fix is released and pinned.
-
-```powershell
-sqllocaldb start MSSQLLocalDB
-dotnet restore --locked-mode
-dotnet run --no-restore
-```
+The C# source and local-project verification remain with the unpublished article draft. A runnable public project and setup commands will be added after the dependency fix is released and pinned.
 
 ## Verified lifecycle output
 
