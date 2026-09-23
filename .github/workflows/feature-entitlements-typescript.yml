@@ -1,0 +1,43 @@
+name: Verify TypeScript feature entitlements
+on:
+  push:
+    paths:
+      - 'examples/feature-entitlements-typescript/**'
+      - '.github/workflows/feature-entitlements-typescript.yml'
+  pull_request:
+    paths:
+      - 'examples/feature-entitlements-typescript/**'
+      - '.github/workflows/feature-entitlements-typescript.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  postgres:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_USER: castcoop
+          POSTGRES_PASSWORD: local-ci-only
+          POSTGRES_DB: castcoop_demo
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready --health-interval 5s
+          --health-timeout 5s --health-retries 10
+    defaults:
+      run:
+        working-directory: examples/feature-entitlements-typescript
+    env:
+      DATABASE_URL: postgresql://castcoop:local-ci-only@localhost:5432/castcoop_demo
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: examples/feature-entitlements-typescript/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - name: Verify repeat runs
+        run: npm run demo

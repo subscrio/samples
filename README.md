@@ -4,6 +4,8 @@ Runnable C# and TypeScript examples for Subscrio how-to articles.
 
 Start with the [ASP.NET Core feature-entitlement example](examples/feature-entitlements-aspnet-core). It includes SQL Server LocalDB setup and an executable check of the real HTTP endpoint. The [sample index](samples.json) tracks ready examples and the remaining planned articles.
 
+For Node.js, run the [TypeScript feature-entitlement example](examples/feature-entitlements-typescript). It demonstrates boolean access checks, numeric allowances, and text-based support routing against PostgreSQL.
+
 ## Repository layout
 
 Each article gets its own folder under `examples/`, named for the implementation it teaches and the language or framework it uses. Most examples will be small .NET console or TypeScript Node applications. Samples that demonstrate an HTTP boundary include a minimal server; the Stripe renewal example includes the webhook endpoints it needs.
