@@ -1,0 +1,670 @@
+{
+  "origin": "Reduced Stripe sandbox test-clock responses; provider identifiers replaced with fictional identifiers. Signatures are generated locally by the runners.",
+  "apiVersion": "2026-07-29.dahlia",
+  "initial": {
+    "id": "sub_mooring",
+    "object": "subscription",
+    "customer": "cus_mooring",
+    "created": 1790179851,
+    "status": "active",
+    "canceled_at": null,
+    "cancel_at_period_end": false,
+    "trial_end": null,
+    "metadata": {
+      "subscrioCustomerKey": "customer",
+      "subscrioSubscriptionKey": "agreement"
+    },
+    "items": {
+      "object": "list",
+      "data": [
+        {
+          "id": "si_mooring",
+          "object": "subscription_item",
+          "current_period_start": 1790179851,
+          "current_period_end": 1792771851,
+          "price": {
+            "id": "price_mooring",
+            "object": "price",
+            "recurring": {
+              "interval": "month",
+              "interval_count": 1
+            }
+          }
+        }
+      ]
+    },
+    "latest_invoice": {
+      "id": "in_R7xlGLe0",
+      "object": "invoice",
+      "status": "paid",
+      "parent": {
+        "type": "subscription_details",
+        "subscription_details": {
+          "subscription": "sub_mooring"
+        }
+      },
+      "lines": {
+        "object": "list",
+        "data": [
+          {
+            "id": "il_fixture",
+            "object": "line_item",
+            "period": {
+              "end": 1792771851,
+              "start": 1790179851
+            },
+            "pricing": {
+              "type": "price_details",
+              "price_details": {
+                "price": "price_mooring"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "scenarios": [
+    {
+      "label": "Successful renewal",
+      "allowed": true,
+      "current": {
+        "id": "sub_mooring",
+        "object": "subscription",
+        "customer": "cus_mooring",
+        "created": 1790179851,
+        "status": "active",
+        "canceled_at": null,
+        "cancel_at_period_end": false,
+        "trial_end": null,
+        "metadata": {
+          "subscrioCustomerKey": "customer",
+          "subscrioSubscriptionKey": "agreement"
+        },
+        "items": {
+          "object": "list",
+          "data": [
+            {
+              "id": "si_mooring",
+              "object": "subscription_item",
+              "current_period_start": 1792771851,
+              "current_period_end": 1795450251,
+              "price": {
+                "id": "price_mooring",
+                "object": "price",
+                "recurring": {
+                  "interval": "month",
+                  "interval_count": 1
+                }
+              }
+            }
+          ]
+        },
+        "latest_invoice": {
+          "id": "in_nHwUWCMQ",
+          "object": "invoice",
+          "status": "paid",
+          "parent": {
+            "type": "subscription_details",
+            "subscription_details": {
+              "subscription": "sub_mooring"
+            }
+          },
+          "lines": {
+            "object": "list",
+            "data": [
+              {
+                "id": "il_fixture",
+                "object": "line_item",
+                "period": {
+                  "end": 1795450251,
+                  "start": 1792771851
+                },
+                "pricing": {
+                  "type": "price_details",
+                  "price_details": {
+                    "price": "price_mooring"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "event": {
+        "id": "evt_mooring_1",
+        "object": "event",
+        "api_version": "2026-07-29.dahlia",
+        "created": 1790179868,
+        "livemode": false,
+        "type": "invoice.payment_succeeded",
+        "data": {
+          "object": {
+            "id": "in_nHwUWCMQ",
+            "object": "invoice",
+            "status": "paid",
+            "parent": {
+              "type": "subscription_details",
+              "subscription_details": {
+                "subscription": "sub_mooring"
+              }
+            },
+            "lines": {
+              "object": "list",
+              "data": [
+                {
+                  "id": "il_fixture",
+                  "object": "line_item",
+                  "period": {
+                    "end": 1795450251,
+                    "start": 1792771851
+                  },
+                  "pricing": {
+                    "type": "price_details",
+                    "price_details": {
+                      "price": "price_mooring"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "label": "Subscription update",
+      "allowed": true,
+      "current": {
+        "id": "sub_mooring",
+        "object": "subscription",
+        "customer": "cus_mooring",
+        "created": 1790179851,
+        "status": "active",
+        "canceled_at": null,
+        "cancel_at_period_end": false,
+        "trial_end": null,
+        "metadata": {
+          "subscrioCustomerKey": "customer",
+          "subscrioSubscriptionKey": "agreement"
+        },
+        "items": {
+          "object": "list",
+          "data": [
+            {
+              "id": "si_mooring",
+              "object": "subscription_item",
+              "current_period_start": 1792771851,
+              "current_period_end": 1795450251,
+              "price": {
+                "id": "price_mooring",
+                "object": "price",
+                "recurring": {
+                  "interval": "month",
+                  "interval_count": 1
+                }
+              }
+            }
+          ]
+        },
+        "latest_invoice": {
+          "id": "in_nHwUWCMQ",
+          "object": "invoice",
+          "status": "paid",
+          "parent": {
+            "type": "subscription_details",
+            "subscription_details": {
+              "subscription": "sub_mooring"
+            }
+          },
+          "lines": {
+            "object": "list",
+            "data": [
+              {
+                "id": "il_fixture",
+                "object": "line_item",
+                "period": {
+                  "end": 1795450251,
+                  "start": 1792771851
+                },
+                "pricing": {
+                  "type": "price_details",
+                  "price_details": {
+                    "price": "price_mooring"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "event": {
+        "id": "evt_mooring_2",
+        "object": "event",
+        "api_version": "2026-07-29.dahlia",
+        "created": 1790179860,
+        "livemode": false,
+        "type": "customer.subscription.updated",
+        "data": {
+          "object": {
+            "id": "sub_mooring",
+            "object": "subscription",
+            "customer": "cus_mooring",
+            "created": 1790179851,
+            "status": "active",
+            "canceled_at": null,
+            "cancel_at_period_end": false,
+            "trial_end": null,
+            "metadata": {
+              "subscrioCustomerKey": "customer",
+              "subscrioSubscriptionKey": "agreement"
+            },
+            "items": {
+              "object": "list",
+              "data": [
+                {
+                  "id": "si_mooring",
+                  "object": "subscription_item",
+                  "current_period_start": 1792771851,
+                  "current_period_end": 1795450251,
+                  "price": {
+                    "id": "price_mooring",
+                    "object": "price",
+                    "recurring": {
+                      "interval": "month",
+                      "interval_count": 1
+                    }
+                  }
+                }
+              ]
+            },
+            "latest_invoice": {
+              "id": "in_nHwUWCMQ",
+              "object": "invoice",
+              "status": "paid",
+              "parent": {
+                "type": "subscription_details",
+                "subscription_details": {
+                  "subscription": "sub_mooring"
+                }
+              },
+              "lines": {
+                "object": "list",
+                "data": [
+                  {
+                    "id": "il_fixture",
+                    "object": "line_item",
+                    "period": {
+                      "end": 1795450251,
+                      "start": 1792771851
+                    },
+                    "pricing": {
+                      "type": "price_details",
+                      "price_details": {
+                        "price": "price_mooring"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "label": "Failed renewal",
+      "allowed": false,
+      "current": {
+        "id": "sub_mooring",
+        "object": "subscription",
+        "customer": "cus_mooring",
+        "created": 1790179851,
+        "status": "past_due",
+        "canceled_at": null,
+        "cancel_at_period_end": false,
+        "trial_end": null,
+        "metadata": {
+          "subscrioCustomerKey": "customer",
+          "subscrioSubscriptionKey": "agreement"
+        },
+        "items": {
+          "object": "list",
+          "data": [
+            {
+              "id": "si_mooring",
+              "object": "subscription_item",
+              "current_period_start": 1795450251,
+              "current_period_end": 1798042251,
+              "price": {
+                "id": "price_mooring",
+                "object": "price",
+                "recurring": {
+                  "interval": "month",
+                  "interval_count": 1
+                }
+              }
+            }
+          ]
+        },
+        "latest_invoice": {
+          "id": "in_mpch632J",
+          "object": "invoice",
+          "status": "open",
+          "parent": {
+            "type": "subscription_details",
+            "subscription_details": {
+              "subscription": "sub_mooring"
+            }
+          },
+          "lines": {
+            "object": "list",
+            "data": [
+              {
+                "id": "il_fixture",
+                "object": "line_item",
+                "period": {
+                  "end": 1798042251,
+                  "start": 1795450251
+                },
+                "pricing": {
+                  "type": "price_details",
+                  "price_details": {
+                    "price": "price_mooring"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "event": {
+        "id": "evt_mooring_3",
+        "object": "event",
+        "api_version": "2026-07-29.dahlia",
+        "created": 1790179884,
+        "livemode": false,
+        "type": "invoice.payment_failed",
+        "data": {
+          "object": {
+            "id": "in_mpch632J",
+            "object": "invoice",
+            "status": "open",
+            "parent": {
+              "type": "subscription_details",
+              "subscription_details": {
+                "subscription": "sub_mooring"
+              }
+            },
+            "lines": {
+              "object": "list",
+              "data": [
+                {
+                  "id": "il_fixture",
+                  "object": "line_item",
+                  "period": {
+                    "end": 1798042251,
+                    "start": 1795450251
+                  },
+                  "pricing": {
+                    "type": "price_details",
+                    "price_details": {
+                      "price": "price_mooring"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "label": "Payment recovery",
+      "allowed": true,
+      "current": {
+        "id": "sub_mooring",
+        "object": "subscription",
+        "customer": "cus_mooring",
+        "created": 1790179851,
+        "status": "active",
+        "canceled_at": null,
+        "cancel_at_period_end": false,
+        "trial_end": null,
+        "metadata": {
+          "subscrioCustomerKey": "customer",
+          "subscrioSubscriptionKey": "agreement"
+        },
+        "items": {
+          "object": "list",
+          "data": [
+            {
+              "id": "si_mooring",
+              "object": "subscription_item",
+              "current_period_start": 1795450251,
+              "current_period_end": 1798042251,
+              "price": {
+                "id": "price_mooring",
+                "object": "price",
+                "recurring": {
+                  "interval": "month",
+                  "interval_count": 1
+                }
+              }
+            }
+          ]
+        },
+        "latest_invoice": {
+          "id": "in_mpch632J",
+          "object": "invoice",
+          "status": "paid",
+          "parent": {
+            "type": "subscription_details",
+            "subscription_details": {
+              "subscription": "sub_mooring"
+            }
+          },
+          "lines": {
+            "object": "list",
+            "data": [
+              {
+                "id": "il_fixture",
+                "object": "line_item",
+                "period": {
+                  "end": 1798042251,
+                  "start": 1795450251
+                },
+                "pricing": {
+                  "type": "price_details",
+                  "price_details": {
+                    "price": "price_mooring"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "event": {
+        "id": "evt_mooring_4",
+        "object": "event",
+        "api_version": "2026-07-29.dahlia",
+        "created": 1790179890,
+        "livemode": false,
+        "type": "invoice.payment_succeeded",
+        "data": {
+          "object": {
+            "id": "in_mpch632J",
+            "object": "invoice",
+            "status": "paid",
+            "parent": {
+              "type": "subscription_details",
+              "subscription_details": {
+                "subscription": "sub_mooring"
+              }
+            },
+            "lines": {
+              "object": "list",
+              "data": [
+                {
+                  "id": "il_fixture",
+                  "object": "line_item",
+                  "period": {
+                    "end": 1798042251,
+                    "start": 1795450251
+                  },
+                  "pricing": {
+                    "type": "price_details",
+                    "price_details": {
+                      "price": "price_mooring"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "label": "Cancellation",
+      "allowed": false,
+      "current": {
+        "id": "sub_mooring",
+        "object": "subscription",
+        "customer": "cus_mooring",
+        "created": 1790179851,
+        "status": "canceled",
+        "canceled_at": 1795457451,
+        "cancel_at_period_end": false,
+        "trial_end": null,
+        "metadata": {
+          "subscrioCustomerKey": "customer",
+          "subscrioSubscriptionKey": "agreement"
+        },
+        "items": {
+          "object": "list",
+          "data": [
+            {
+              "id": "si_mooring",
+              "object": "subscription_item",
+              "current_period_start": 1795450251,
+              "current_period_end": 1798042251,
+              "price": {
+                "id": "price_mooring",
+                "object": "price",
+                "recurring": {
+                  "interval": "month",
+                  "interval_count": 1
+                }
+              }
+            }
+          ]
+        },
+        "latest_invoice": {
+          "id": "in_mpch632J",
+          "object": "invoice",
+          "status": "paid",
+          "parent": {
+            "type": "subscription_details",
+            "subscription_details": {
+              "subscription": "sub_mooring"
+            }
+          },
+          "lines": {
+            "object": "list",
+            "data": [
+              {
+                "id": "il_fixture",
+                "object": "line_item",
+                "period": {
+                  "end": 1798042251,
+                  "start": 1795450251
+                },
+                "pricing": {
+                  "type": "price_details",
+                  "price_details": {
+                    "price": "price_mooring"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "event": {
+        "id": "evt_mooring_5",
+        "object": "event",
+        "api_version": "2026-07-29.dahlia",
+        "created": 1790179893,
+        "livemode": false,
+        "type": "customer.subscription.deleted",
+        "data": {
+          "object": {
+            "id": "sub_mooring",
+            "object": "subscription",
+            "customer": "cus_mooring",
+            "created": 1790179851,
+            "status": "canceled",
+            "canceled_at": 1795457451,
+            "cancel_at_period_end": false,
+            "trial_end": null,
+            "metadata": {
+              "subscrioCustomerKey": "customer",
+              "subscrioSubscriptionKey": "agreement"
+            },
+            "items": {
+              "object": "list",
+              "data": [
+                {
+                  "id": "si_mooring",
+                  "object": "subscription_item",
+                  "current_period_start": 1795450251,
+                  "current_period_end": 1798042251,
+                  "price": {
+                    "id": "price_mooring",
+                    "object": "price",
+                    "recurring": {
+                      "interval": "month",
+                      "interval_count": 1
+                    }
+                  }
+                }
+              ]
+            },
+            "latest_invoice": {
+              "id": "in_mpch632J",
+              "object": "invoice",
+              "status": "paid",
+              "parent": {
+                "type": "subscription_details",
+                "subscription_details": {
+                  "subscription": "sub_mooring"
+                }
+              },
+              "lines": {
+                "object": "list",
+                "data": [
+                  {
+                    "id": "il_fixture",
+                    "object": "line_item",
+                    "period": {
+                      "end": 1798042251,
+                      "start": 1795450251
+                    },
+                    "pricing": {
+                      "type": "price_details",
+                      "price_details": {
+                        "price": "price_mooring"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

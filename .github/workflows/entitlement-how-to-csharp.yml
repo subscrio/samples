@@ -1,0 +1,44 @@
+name: Verify C# entitlement how-to samples
+on:
+  push:
+    paths:
+      - 'examples/monthly-usage-quotas-csharp/**'
+      - 'examples/monthly-subscription-credits-csharp/**'
+      - 'examples/timed-feature-overrides-csharp/**'
+      - 'examples/one-time-app-purchase-aspnet-core/**'
+      - 'examples/prepaid-credit-packs-csharp/**'
+      - '.github/workflows/entitlement-how-to-csharp.yml'
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  localdb:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        sample:
+          - monthly-usage-quotas-csharp
+          - monthly-subscription-credits-csharp
+          - timed-feature-overrides-csharp
+          - one-time-app-purchase-aspnet-core
+          - prepaid-credit-packs-csharp
+    defaults:
+      run:
+        working-directory: examples/${{ matrix.sample }}
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Start LocalDB
+        run: |
+          $instances = sqllocaldb info
+          if ($LASTEXITCODE -ne 0) { throw 'LocalDB is unavailable.' }
+          if ($instances -notcontains 'MSSQLLocalDB') { sqllocaldb create MSSQLLocalDB }
+          sqllocaldb start MSSQLLocalDB
+          if ($LASTEXITCODE -ne 0) { throw 'LocalDB did not start.' }
+      - run: dotnet restore --locked-mode --source https://api.nuget.org/v3/index.json
+      - run: dotnet run --no-restore

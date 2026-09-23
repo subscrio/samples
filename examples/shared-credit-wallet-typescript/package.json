@@ -1,0 +1,24 @@
+{
+  "name": "shared-credit-wallet-typescript",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "tsc --noEmit",
+    "demo": "tsx src/demo.ts",
+    "test": "npm run check && npm run demo"
+  },
+  "dependencies": {
+    "subscrio": "0.5.0",
+    "dotenv": "17.4.2",
+    "pg": "8.16.3"
+  },
+  "devDependencies": {
+    "tsx": "4.23.12",
+    "typescript": "6.0.2",
+    "@types/node": "22.19.15",
+    "@types/pg": "8.15.5"
+  }
+}
