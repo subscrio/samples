@@ -10,7 +10,7 @@ Article status: unpublished draft. The public article URL will be added after pu
 
 Node.js 24.11.1 and PostgreSQL 17. Copy .env.example to .env and replace the placeholders with your local development connection. The role needs CREATEDB permission. Never use a production connection.
 
-Subscrio dependency: 0.4.0, pinned in the project and lock file.
+Subscrio dependency: 0.5.0, pinned in the project and lock file.
 
 ## Run
 

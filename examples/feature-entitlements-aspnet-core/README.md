@@ -17,7 +17,7 @@ Companion article: "How to add feature entitlements to an ASP.NET Core app with 
 - Microsoft SQL Server Express LocalDB, with an instance named `MSSQLLocalDB`. Install LocalDB through the SQL Server Express installer or the Visual Studio Installer's individual components.
 - Internet access for the first NuGet restore.
 
-The sample pins `Subscrio.Core` to 0.4.0 and includes `packages.lock.json`. It uses Windows integrated authentication, so no database password is needed. The connection-string format is shown in `appsettings.example.json`; the executable builds it in `LocalDatabase.cs` and does not read that reference file.
+The sample pins `Subscrio.Core` to 0.5.1 and includes `packages.lock.json`. It uses Windows integrated authentication, so no database password is needed. The connection-string format is shown in `appsettings.example.json`; the executable builds it in `LocalDatabase.cs` and does not read that reference file.
 
 Verified on Windows with .NET SDK 10.0.302 and SQL Server 2019 LocalDB 15.0.4382.1.
 
@@ -101,3 +101,5 @@ Verification uses a fresh database on every run. Manual testing retains reservat
 A recurring reservation occupies one active slot in this example. There is no recurrence scheduler, date-conflict detection, payment integration, or booking-cancellation UI. Monthly billing cycles describe the sample plans; assigning one does not charge a customer or keep a billing provider synchronized.
 
 The runnable example targets the entitlement decision and the concurrency boundary. Replace the fixture authentication before adapting it to a deployed application.
+
+To use an existing SQL Server instance instead of LocalDB, set `SUBSCRIO_SAMPLE_SQLSERVER` (for example, `localhost`). The sample uses Windows authentication and needs permission to create its sample database.

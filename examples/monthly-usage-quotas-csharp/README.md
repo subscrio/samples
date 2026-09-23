@@ -12,7 +12,7 @@ Windows, .NET SDK 10.0.302, SQL Server Express LocalDB, and the default MSSQLLoc
 
 Connection template: `Server=(localdb)\MSSQLLocalDB;Database=SubscrioBlog_<generated name>;Integrated Security=true;TrustServerCertificate=true`.
 
-Subscrio 0.5.0 is pinned in the project and dependency lock file.
+Subscrio 0.5.1 is pinned in the project and dependency lock file.
 
 ## Run
 

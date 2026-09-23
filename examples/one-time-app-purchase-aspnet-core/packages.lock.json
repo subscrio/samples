@@ -4,9 +4,9 @@
     "net10.0": {
       "Subscrio.Core": {
         "type": "Direct",
-        "requested": "[0.5.0, )",
-        "resolved": "0.5.0",
-        "contentHash": "z7hKz14vLWImS9Ipx5KAnjU024D4Sid3zejKhklhEhMNfiubN3FPjduQzD9MuyXv7WpLfoAAYZYSyTrSO6UN0Q==",
+        "requested": "[0.5.1, )",
+        "resolved": "0.5.1",
+        "contentHash": "l5hPQCKKDqik1Tzt2xhxEQ2eL0bwN4yC9M+6o+hTJTtI9xGEuRunDJ+WeSc28CIylk0omxZ1rHDOc26v6LB1iw==",
         "dependencies": {
           "BCrypt.Net-Next": "4.2.1",
           "FluentValidation": "12.1.1",

@@ -8,6 +8,6 @@
     "check": "tsc --noEmit",
     "test": "npm run check && npm run demo"
   },
-  "dependencies": { "subscrio": "0.4.0", "dotenv": "17.4.2" },
+  "dependencies": { "subscrio": "0.5.0", "dotenv": "17.4.2" },
   "devDependencies": { "tsx": "4.23.12", "typescript": "6.0.2", "@types/node": "22.19.15" }
 }

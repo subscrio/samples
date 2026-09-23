@@ -6,7 +6,7 @@ public static class LocalDatabase
 {
     public static string ConnectionString(string databaseName) => new SqlConnectionStringBuilder
     {
-        DataSource = @"(localdb)\MSSQLLocalDB",
+        DataSource = Environment.GetEnvironmentVariable("SUBSCRIO_SAMPLE_SQLSERVER") ?? @"(localdb)\MSSQLLocalDB",
         InitialCatalog = databaseName,
         IntegratedSecurity = true,
         TrustServerCertificate = true
