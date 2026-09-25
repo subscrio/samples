@@ -2,6 +2,8 @@ name: Verify C# entitlement how-to samples
 on:
   push:
     paths:
+      - 'examples/subscription-capacity-packs-csharp/**'
+      - 'examples/stripe-subscription-renewals/dotnet/**'
       - 'examples/monthly-usage-quotas-csharp/**'
       - 'examples/monthly-subscription-credits-csharp/**'
       - 'examples/timed-feature-overrides-csharp/**'
@@ -19,6 +21,8 @@ jobs:
       fail-fast: false
       matrix:
         sample:
+          - subscription-capacity-packs-csharp
+          - stripe-subscription-renewals/dotnet
           - monthly-usage-quotas-csharp
           - monthly-subscription-credits-csharp
           - timed-feature-overrides-csharp

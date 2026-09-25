@@ -1,3 +1,13 @@
-# C# implementation pending
+# C# Stripe subscription renewals
 
-Subscrio.Core 0.5.1 includes the SQL Server UTC mapping fix. The C# renewal example remains with the unpublished article draft and still needs to be integrated and verified against that public package. No runnable project is published here yet. The TypeScript example in the sibling folder is runnable with public dependencies.
+This .NET application uses SQL Server Express LocalDB and the published Subscrio.Core package. See the [complete setup and expected output](../README.md), including the optional Stripe CLI tunnel.
+
+From this folder on Windows:
+
+```powershell
+sqllocaldb start MSSQLLocalDB
+dotnet restore --locked-mode --source https://api.nuget.org/v3/index.json
+dotnet run --no-restore
+```
+
+The default run uses recorded sandbox fixtures and requires no Stripe credentials. It checks successful renewal, failed payment, recovery, cancellation, signature rejection, duplicates, delayed events, repaired mappings, and exact persisted UTC timestamps. It creates and removes its own LocalDB database.

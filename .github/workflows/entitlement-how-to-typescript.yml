@@ -2,6 +2,8 @@ name: Verify TypeScript entitlement how-to samples
 on:
   push:
     paths:
+      - 'examples/scheduled-subscription-activation-typescript/**'
+      - 'examples/subscription-feature-bundles-typescript/**'
       - 'examples/billing-period-usage-metering-typescript/**'
       - 'examples/shared-credit-wallet-typescript/**'
       - 'examples/combine-subscription-entitlements-typescript/**'
@@ -20,6 +22,8 @@ jobs:
       fail-fast: false
       matrix:
         sample:
+          - scheduled-subscription-activation-typescript
+          - subscription-feature-bundles-typescript
           - billing-period-usage-metering-typescript
           - shared-credit-wallet-typescript
           - combine-subscription-entitlements-typescript

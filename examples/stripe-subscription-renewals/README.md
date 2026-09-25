@@ -4,7 +4,7 @@ MooringDesk follows one agreement through renewal, failed payment, recovery, can
 
 ## Current status
 
-TypeScript passes with public Subscrio 0.5.0 and Stripe 22.5.0. Subscrio.Core 0.5.1 fixes the SQL Server UTC mapping bug that blocked the C# runner. Its source remains with the unpublished article draft and still needs to be integrated and verified against the public package. No runnable C# project is published here yet. Keep the exact-date assertion when adding it.
+Both runners pass with public dependencies: Subscrio 0.5.0 for TypeScript and Subscrio.Core 0.5.1 for C#. They verify the same lifecycle, including exact UTC billing-period timestamps after persistence.
 
 ## TypeScript
 
@@ -21,11 +21,17 @@ npm test
 
 Tested: .NET SDK 10.0.302, Stripe.net 52.3.0, and SQL Server Express LocalDB on Windows with integrated authentication. Connection template: `Server=(localdb)\MSSQLLocalDB;Database=SubscrioBlog_<generated name>;Integrated Security=true;TrustServerCertificate=true`. Install LocalDB through SQL Server Express.
 
-The C# source and local-project verification remain with the unpublished article draft. A runnable public project and setup commands will be added after the dependency fix is released and pinned.
+From the `dotnet` folder:
+
+```powershell
+sqllocaldb start MSSQLLocalDB
+dotnet restore --locked-mode --source https://api.nuget.org/v3/index.json
+dotnet run --no-restore
+```
 
 ## Verified lifecycle output
 
-C# output below uses the pending library fix. TypeScript passes the same checks with public dependencies, including milliseconds in ISO timestamps.
+Both runners pass these checks with public dependencies. TypeScript includes milliseconds in ISO timestamps.
 
 ```text
 Invalid signature HTTP: 400
@@ -109,7 +115,7 @@ $env:STRIPE_WEBHOOK_SECRET = "whsec_printed_by_listener"
 npm --prefix typescript run listen
 ```
 
-The TypeScript server also needs DATABASE_URL, either in its .env file or environment. The pending C# project uses the same four Stripe environment variables; start LocalDB, then run `dotnet run -- --listen` from that project. Only run one server on port 4242 at a time. Both create fresh local databases, import your existing sandbox subscription, and retain data until stopped.
+The TypeScript server also needs DATABASE_URL, either in its .env file or environment. The C# project uses the same four Stripe environment variables; start LocalDB, then run `dotnet run -- --listen` from that project. Only run one server on port 4242 at a time. Both create fresh local databases, import your existing sandbox subscription, and retain data until stopped.
 
 Use a third terminal in this folder, with STRIPE_SECRET_KEY set, for each test. Wait for forwarded HTTP 200 responses and inspect status after each step:
 
