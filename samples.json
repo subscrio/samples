@@ -57,9 +57,9 @@
         "typescript"
       ],
       "path": "examples/scheduled-subscription-activation-typescript",
-      "status": "planned",
+      "status": "ready",
       "articleUrl": null,
-      "verifiedCommit": null
+      "verifiedCommit": "9b3a682c83667c4c9899e88ac4ddefed0b9be5ed"
     },
     {
       "title": "Test subscription access at expiration boundaries in C#",
@@ -87,9 +87,9 @@
         "csharp"
       ],
       "path": "examples/subscription-capacity-packs-csharp",
-      "status": "planned",
+      "status": "ready",
       "articleUrl": null,
-      "verifiedCommit": null
+      "verifiedCommit": "9b3a682c83667c4c9899e88ac4ddefed0b9be5ed"
     },
     {
       "title": "How to sell optional feature bundles with Subscrio in TypeScript",
@@ -97,9 +97,9 @@
         "typescript"
       ],
       "path": "examples/subscription-feature-bundles-typescript",
-      "status": "planned",
+      "status": "ready",
       "articleUrl": null,
-      "verifiedCommit": null
+      "verifiedCommit": "9b3a682c83667c4c9899e88ac4ddefed0b9be5ed"
     },
     {
       "title": "Retire a subscription add-on while preserving existing access in C#",
@@ -328,13 +328,13 @@
         "typescript"
       ],
       "path": "examples/stripe-subscription-renewals",
-      "status": "blocked",
+      "status": "ready",
       "articleUrl": null,
-      "verifiedCommit": null,
+      "verifiedCommit": "9b3a682c83667c4c9899e88ac4ddefed0b9be5ed",
       "verifiedLanguages": {
-        "typescript": "b694ef1b7b1d117509bc109931cfcceda3673bc2"
-      },
-      "blocker": "C# SQL Server UTC mapping fix is tested locally; public library release is pending."
+        "typescript": "b694ef1b7b1d117509bc109931cfcceda3673bc2",
+        "csharp": "9b3a682c83667c4c9899e88ac4ddefed0b9be5ed"
+      }
     }
   ]
 }
