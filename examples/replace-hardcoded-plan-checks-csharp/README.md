@@ -1,8 +1,8 @@
 # Replace hardcoded plan checks with feature entitlements in C#
 
-SeedShelf's CSV export works for Professional customers. Then a seed library consortium buys an Institutional plan. It includes the same capability, but the endpoint still checks whether the plan name is professional. A paying customer receives a denial because the offer has a new name.
+FeedbackDesk helps software teams collect and prioritize customer feedback. CSV export works for Pro customers. When a larger team buys the new Enterprise plan, its product manager cannot export feedback for a planning meeting: the export method still checks whether the plan name is pro, even though Enterprise includes exports.
 
-In this guide we will replace that condition with a CSV export entitlement in C#. Both paid offerings will grant export, while Community continues to deny it.
+In this guide we will replace that condition with a CSV export entitlement in C#. Both paid offerings will grant export, while Free continues to deny it.
 
 Article status: unpublished draft. The public article URL will be added after publication.
 
@@ -25,15 +25,15 @@ dotnet run --no-restore
 ## Verified output
 
 ```text
-Old professional: true
-Old institutional: false
-Community export: "export_not_included"
-Professional export: "seed,quantity\nBean,12"
-Institutional export: "seed,quantity\nBean,12"
-PASS: SeedShelf behavior verified.
+Before the fix, Pro export is allowed.
+Before the fix, Enterprise export is denied.
+Free customer: export denied, as expected.
+Pro customer: feedback CSV returned, as expected.
+Enterprise customer: feedback CSV returned, as expected.
+PASS: FeedbackDesk export access verified.
 ```
 
-The Institutional export now returns the same CSV content as Professional. Community still returns export_not_included. Adding another qualifying plan means assigning its csv-export value; the export action can stay unchanged.
+The Enterprise export now returns the same CSV content as Pro. Free still returns export_not_included. Adding another qualifying plan means assigning its csv-export value; the export action can stay unchanged.
 
 ## Reruns and responsibilities
 
@@ -42,3 +42,4 @@ Every run creates a uniquely named disposable database. Cleanup checks the gener
 The sample teaches entitlement state and the application decisions shown above. Creating a billing cycle or subscription does not collect payment. External work and payment-provider integration remain application responsibilities.
 
 To use an existing SQL Server instance instead of LocalDB, set `SUBSCRIO_SAMPLE_SQLSERVER` (for example, `localhost`). The sample uses Windows authentication and needs permission to create its sample database.
+
