@@ -1,0 +1,28 @@
+{
+  "name": "stripe-price-id-feature-access-nextjs",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "seed": "tsx scripts/seed.ts",
+    "check": "tsc --noEmit",
+    "test": "npm run check && npm run build",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "dependencies": {
+    "next": "16.4.6",
+    "react": "19.2.1",
+    "react-dom": "19.2.1",
+    "subscrio": "0.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.15",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
+    "tsx": "4.23.12",
+    "typescript": "6.0.2"
+  }
+}
