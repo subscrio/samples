@@ -10,9 +10,10 @@ export async function replayPublicationRequests(publish: (key: string) => Promis
   });
   server.listen(0,'127.0.0.1'); await once(server,'listening');
   const address = server.address(); if (!address || typeof address === 'string') throw new Error('Missing test port');
+  const baseUrl = 'http://127.0.0.1:' + address.port;
   try {
     for (const [key,status,body] of [['local-club',403,{error:'live_brackets_not_included'}],['regional-open',201,{status:'published'}]] as const) {
-      const response: Response = await fetch('http://127.0.0.1:'+address.port+'/customers/'+key+'/public-bracket',{method:'POST'});
+      const response: Response = await fetch(baseUrl+'/customers/'+key+'/public-bracket',{method:'POST'});
       const actual = await response.json(); assert.equal(response.status,status);assert.deepEqual(actual,body);
       console.log(key + ': HTTP ' + response.status + ' ' + JSON.stringify(actual));
     }

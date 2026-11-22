@@ -2,6 +2,8 @@ name: Verify C# entitlement how-to samples
 on:
   push:
     paths:
+      - 'examples/subscription-expiration-tests-csharp/**'
+      - 'examples/retire-subscription-addons-csharp/**'
       - 'examples/subscription-capacity-packs-csharp/**'
       - 'examples/stripe-subscription-renewals/dotnet/**'
       - 'examples/monthly-usage-quotas-csharp/**'
@@ -21,6 +23,8 @@ jobs:
       fail-fast: false
       matrix:
         sample:
+          - subscription-expiration-tests-csharp
+          - retire-subscription-addons-csharp
           - subscription-capacity-packs-csharp
           - stripe-subscription-renewals/dotnet
           - monthly-usage-quotas-csharp

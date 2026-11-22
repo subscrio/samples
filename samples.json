@@ -29,7 +29,7 @@
       "path": "examples/replace-hardcoded-plan-checks-csharp",
       "status": "ready",
       "articleUrl": null,
-      "verifiedCommit": "cb9e842ca46ed65737d9de70d2ae4303f5858f64"
+      "verifiedCommit": null
     },
     {
       "title": "Enforce paid feature access on the server in TypeScript",
@@ -39,7 +39,7 @@
       "path": "examples/server-side-feature-gating-typescript",
       "status": "ready",
       "articleUrl": null,
-      "verifiedCommit": "cb9e842ca46ed65737d9de70d2ae4303f5858f64"
+      "verifiedCommit": null
     },
     {
       "title": "How to build a trial-to-free subscription workflow with Subscrio in C#",
@@ -67,7 +67,7 @@
         "csharp"
       ],
       "path": "examples/subscription-expiration-tests-csharp",
-      "status": "planned",
+      "status": "ready",
       "articleUrl": null,
       "verifiedCommit": null
     },
@@ -77,7 +77,7 @@
         "typescript"
       ],
       "path": "examples/subscription-cancellation-access-typescript",
-      "status": "planned",
+      "status": "ready",
       "articleUrl": null,
       "verifiedCommit": null
     },
@@ -107,7 +107,7 @@
         "csharp"
       ],
       "path": "examples/retire-subscription-addons-csharp",
-      "status": "planned",
+      "status": "ready",
       "articleUrl": null,
       "verifiedCommit": null
     },
@@ -117,7 +117,7 @@
         "typescript"
       ],
       "path": "examples/subscription-addon-precedence-typescript",
-      "status": "planned",
+      "status": "ready",
       "articleUrl": null,
       "verifiedCommit": null
     },

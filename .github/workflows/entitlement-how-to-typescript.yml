@@ -2,6 +2,8 @@ name: Verify TypeScript entitlement how-to samples
 on:
   push:
     paths:
+      - 'examples/subscription-cancellation-access-typescript/**'
+      - 'examples/subscription-addon-precedence-typescript/**'
       - 'examples/scheduled-subscription-activation-typescript/**'
       - 'examples/subscription-feature-bundles-typescript/**'
       - 'examples/billing-period-usage-metering-typescript/**'
@@ -22,6 +24,8 @@ jobs:
       fail-fast: false
       matrix:
         sample:
+          - subscription-cancellation-access-typescript
+          - subscription-addon-precedence-typescript
           - scheduled-subscription-activation-typescript
           - subscription-feature-bundles-typescript
           - billing-period-usage-metering-typescript
