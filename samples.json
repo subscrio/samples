@@ -32,6 +32,17 @@
       "verifiedCommit": null
     },
     {
+      "title": "Keep feature access stable when Stripe prices change",
+      "languages": [
+        "typescript",
+        "csharp"
+      ],
+      "path": "examples/stripe-price-id-feature-access",
+      "status": "ready",
+      "articleUrl": "https://subscrio.com/blog/keep-feature-access-stable-stripe-price-changes/",
+      "verifiedCommit": "b33e8dd241a349a4c3b4c3d500c5c38a8a049147"
+    },
+    {
       "title": "Enforce paid feature access on the server in TypeScript",
       "languages": [
         "typescript"

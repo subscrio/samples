@@ -46,6 +46,7 @@ MIT. See [LICENSE](LICENSE).
 ## More runnable examples
 
 - [Replace hardcoded plan checks in C#](examples/replace-hardcoded-plan-checks-csharp). A new plan name keeps its purchased CSV export access.
+- [Keep feature access stable when Stripe prices change](examples/stripe-price-id-feature-access). Two Stripe Price IDs map to one plan, while the Next.js and ASP.NET Core endpoints check the same feature key.
 - [Enforce feature access in TypeScript](examples/server-side-feature-gating-typescript). Direct HTTP requests receive the correct publication decision.
 - [Transition a C# trial to read-only access](examples/trial-to-free-subscriptions-csharp). An explicit lifecycle job replaces an expired trial.
 
